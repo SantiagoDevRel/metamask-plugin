@@ -1,6 +1,9 @@
 {
   "name": "metamask-plugin-test3",
-  "version": "1.0.2",
+  "version": "1.0.3",
+  "repository": {
+    "url": "https://github.com/SantiagoDevRel/metamask-plugin"
+  },
   "description": "",
   "main": "index.mjs",
   "scripts": {
