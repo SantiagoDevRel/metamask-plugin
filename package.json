@@ -1,6 +1,6 @@
 {
-  "name": "metamask-plugin-test3",
-  "version": "1.0.3",
+  "name": "web3-metamask-plugin",
+  "version": "1.0.0",
   "repository": {
     "url": "https://github.com/SantiagoDevRel/metamask-plugin"
   },
