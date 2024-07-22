@@ -1,7 +1,7 @@
 import { Web3PluginBase, eth } from "web3";
 
 export class MetamaskPlugin extends Web3PluginBase {
-  pluginNamespace = "Metamask";
+  pluginNamespace = "metamask";
   accounts = [];
 
   async connectWallet() {
