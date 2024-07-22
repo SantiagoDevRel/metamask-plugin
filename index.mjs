@@ -13,7 +13,18 @@ export class MetamaskPlugin extends Web3PluginBase {
     return connectedwallets;
   }
 
-  async switchGnosis() {
+  async disconnectWallet() {
+    await this.requestManager.send({
+      method: "wallet_revokePermissions",
+      params: [
+        {
+          eth_accounts: {},
+        },
+      ],
+    });
+  }
+
+  async switchToGnosis() {
     await this.requestManager.send({
       method: "wallet_addEthereumChain",
       params: [
@@ -33,7 +44,7 @@ export class MetamaskPlugin extends Web3PluginBase {
     });
   }
 
-  async switchEthereum() {
+  async switchToEthereum() {
     await this.requestManager.send({
       method: "wallet_addEthereumChain",
       params: [
@@ -53,7 +64,7 @@ export class MetamaskPlugin extends Web3PluginBase {
     });
   }
 
-  async switchSepolia() {
+  async switchToSepolia() {
     await this.requestManager.send({
       method: "wallet_addEthereumChain",
       params: [
@@ -68,17 +79,6 @@ export class MetamaskPlugin extends Web3PluginBase {
           rpcUrls: ["https://ethereum-sepolia-rpc.publicnode.com", "https://endpoints.omniatech.io/v1/eth/sepolia/public", "https://endpoints.omniatech.io/v1/eth/sepolia/public"],
           chainId: "0xAA36A7",
           chainName: "Sepolia Testnet",
-        },
-      ],
-    });
-  }
-
-  async disconnectWallet() {
-    await this.requestManager.send({
-      method: "wallet_revokePermissions",
-      params: [
-        {
-          eth_accounts: {},
         },
       ],
     });
