@@ -15,7 +15,7 @@ npm i web3-metamask-plugin
 ```js
 // import modules
 import { Web3 } from "web3";
-import { MetamaskPlugin } from "metamask-plugin-test3";
+import { MetamaskPlugin } from "web3-metamask-plugin";
 
 // initialize RPC endpoint with window.ethereum and register plugin
 const web3 = new Web3(window.ethereum);
