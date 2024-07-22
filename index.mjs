@@ -2,16 +2,18 @@ import { Web3PluginBase, eth } from "web3";
 
 export class MetamaskPlugin extends Web3PluginBase {
   pluginNamespace = "Metamask";
+  accounts = [];
 
   async connectWallet() {
-    const connectedwallet = await this.requestManager.send({
+    const connectedwallets = await this.requestManager.send({
       method: "eth_requestAccounts",
       params: [],
     });
-    return connectedwallet;
+    this.accounts = connectedwallets;
+    return connectedwallets;
   }
 
-  async addGnosisEnum() {
+  async switchGnosis() {
     await this.requestManager.send({
       method: "wallet_addEthereumChain",
       params: [
@@ -31,7 +33,7 @@ export class MetamaskPlugin extends Web3PluginBase {
     });
   }
 
-  async addEthereum() {
+  async switchEthereum() {
     await this.requestManager.send({
       method: "wallet_addEthereumChain",
       params: [
@@ -51,7 +53,7 @@ export class MetamaskPlugin extends Web3PluginBase {
     });
   }
 
-  async addSepolia() {
+  async switchSepolia() {
     await this.requestManager.send({
       method: "wallet_addEthereumChain",
       params: [
@@ -72,10 +74,46 @@ export class MetamaskPlugin extends Web3PluginBase {
   }
 
   async disconnectWallet() {
-    const response = await this.requestManager.send({
+    await this.requestManager.send({
+      method: "wallet_revokePermissions",
+      params: [
+        {
+          eth_accounts: {},
+        },
+      ],
+    });
+  }
+
+  async getPermissions() {
+    return await this.requestManager.send({
       method: "wallet_getPermissions",
       params: [],
     });
-    console.log("Wallet disconnected", response);
+  }
+
+  async requestPermissions() {
+    return await this.requestManager.send({
+      method: "wallet_requestPermissions",
+      params: [
+        {
+          eth_accounts: {},
+        },
+      ],
+    });
+  }
+
+  async watchAsset(tokenAddress, symbol) {
+    return await this.requestManager.send({
+      method: "wallet_watchAsset",
+      params: {
+        type: "ERC20",
+        options: {
+          address: tokenAddress,
+          symbol: symbol,
+          decimals: 18,
+          image: "https://foo.io/token-image.svg",
+        },
+      },
+    });
   }
 }

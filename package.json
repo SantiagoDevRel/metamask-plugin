@@ -1,6 +1,6 @@
 {
-  "name": "metamask-plugin",
-  "version": "1.0.0",
+  "name": "metamask-plugin-test3",
+  "version": "1.0.2",
   "description": "",
   "main": "index.mjs",
   "scripts": {
