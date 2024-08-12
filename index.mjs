@@ -1,4 +1,4 @@
-import { Web3PluginBase, eth, web3 } from "web3";
+import { Web3PluginBase, eth } from "web3";
 
 export class MetamaskPlugin extends Web3PluginBase {
 	pluginNamespace = "metamask";
