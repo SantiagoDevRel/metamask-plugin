@@ -140,7 +140,7 @@ export class MetamaskPlugin extends Web3PluginBase {
 		});
 	}
 
-	async getAddress() {
+	async getAddresses() {
 		return await this.requestManager.send({
 			method: "eth_accounts",
 			params: [],
