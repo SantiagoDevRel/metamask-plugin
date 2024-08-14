@@ -5,8 +5,10 @@
 		"url": "https://github.com/SantiagoDevRel/metamask-plugin"
 	},
 	"description": "This package provides a collection of useful utility functions designed to streamline and enhance your interaction with the MetaMask API.",
-	"main": "index.mjs",
+	"main": "dist/index.js",
+	"types": "dist/index.d.ts",
 	"scripts": {
+		"build": "npx tsc",
 		"test": "echo \"Error: no test specified\" && exit 1"
 	},
 	"keywords": [],
@@ -14,5 +16,9 @@
 	"license": "ISC",
 	"dependencies": {
 		"web3": "^4.11.0"
+	},
+	"devDependencies": {
+		"@types/node": "^22.3.0",
+		"typescript": "^5.5.4"
 	}
 }
