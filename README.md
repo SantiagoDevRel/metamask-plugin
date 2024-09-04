@@ -38,4 +38,6 @@ await web3.metamask.switchToGnosis();
 await web3.metamask.switchToSepolia();
 
 await web3.metamask.switchToEthereum();
+
+await web3.metamask.switchToSwisstronik();
 ```
