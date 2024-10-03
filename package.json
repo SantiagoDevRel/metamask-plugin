@@ -1,18 +1,18 @@
 {
-	"name": "web3-metamask-plugin",
-	"version": "1.0.2",
-	"repository": {
-		"url": "https://github.com/SantiagoDevRel/metamask-plugin"
-	},
-	"description": "This package provides a collection of useful utility functions designed to streamline and enhance your interaction with the MetaMask API.",
-	"main": "index.mjs",
-	"scripts": {
-		"test": "echo \"Error: no test specified\" && exit 1"
-	},
-	"keywords": [],
-	"author": "",
-	"license": "ISC",
-	"dependencies": {
-		"web3": "^4.11.0"
-	}
+  "name": "web3-metamask-plugin",
+  "version": "1.1.0",
+  "repository": {
+    "url": "https://github.com/SantiagoDevRel/metamask-plugin"
+  },
+  "description": "This package provides a collection of useful utility functions designed to streamline and enhance your interaction with the MetaMask API.",
+  "main": "index.mjs",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "web3": "^4.11.0"
+  }
 }
